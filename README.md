@@ -1,6 +1,25 @@
 # Data Analysis & BI Project: Travel Insurance Sales
 Data analysis project exploring a travel insurance company’s sales, agency and product performance, claims, and risk using MySQL and Power BI.
 
+## 📁 Repository Structure
+
+The repository is organized to separate different stages of the project for clarity:
+
+README.md # Project purpose, tools, methodology, insights, and limitations
+/SQL/
+01_data_cleaning.sql # Cleaning and standardization of raw data
+02_create_tables.sql # Creation of normalized tables and relationships
+03_insert_data.sql # Insert cleaned data into normalized tables
+04_sanity_checks.sql # Verify data integrity and relationships
+/PowerBI/
+Travel_insurance_sales.pbix # Final Power BI dashboard file
+/screenshots/ # Screenshots of each dashboard page
+01_overview.png
+02_agency_performance.png
+03_product_insights.png
+04_conclusions.png
+05_strategic_recommendations.png
+
 ## 📎 Project Purpose 
 
 This project was developed as part of a Data Analyst / Business Intelligence portfolio to demonstrate:
@@ -48,6 +67,7 @@ The dataset was sourced from a publicly available dataset on Kaggle and represen
 ▪️Claim status (Yes / No) 
 
 ## 🧹 Data Cleaning & Modeling (MySQL) 
+
 The raw CSV dataset was fully processed in MySQL, including:
 
 1️⃣ Data cleaning and standardization (e.g., trimming spaces, converting data types)
@@ -68,6 +88,15 @@ The cleaned and structured database consists of:
 
 ▪️sales: sale_id, agency_id, product_id, claim_status, destination, duration, net_sales, commission
 
+### 🧹 SQL Scripts
+
+All SQL scripts used for data cleaning, table creation, normalization, and sanity checks are included here:
+
+- [01_data_cleaning.sql](SQL/01_data_cleaning.sql) – Cleaning and standardizing raw CSV data  
+- [02_create_tables.sql](SQL/02_create_tables.sql) – Creating normalized tables and relational model  
+- [03_insert_data.sql](SQL/03_insert_data_cleaned.sql) – Inserting cleaned data into normalized tables  
+- [04_sanity_checks.sql](SQL/04_sanity_checks.sql) – Verifying data integrity and relationships
+
 ## 📈 Power BI Dashboard Structure 
 
 📊 KPI Measures & Power BI Dashboard
@@ -79,15 +108,19 @@ All key performance indicators (KPIs) were implemented directly in Power BI usin
 ### Dashboard Structure
 
   1️⃣ Overview: Total net sales and number of policies, Overall claim rate, High-level assessment of overall business performance.
+  
   ![Overview](PowerBI/PowerBI/screenshots/01_overview.png)
   
   2️⃣ Agencies Performance: Total sales, net revenue, claim risk, and commission rates by agency, Highlights top-performing and high-risk agencies.
+  
   ![Agency Performance](PowerBI/PowerBI/screenshots/02_agency_performance.png)
   
   3️⃣ Products Insights: Sales and net revenue per product, Claim risk by product, Identification of most profitable and risk-heavy products.
+  
   ![Product Insights](PowerBI/PowerBI/screenshots/03_product_insights.png)
   
   4️⃣ Conclusions & Recommendations: Summary of principal KPIs, Top and lowest performing segments (agencies and products), Strategic recommendations for business improvements.
+  
   ![Conclusions](PowerBI/PowerBI/screenshots/04_conclusions.png) ![Strategic Recommendations](PowerBI/PowerBI/screenshots/05_strategic_recommendations.png)
   
 ### Key DAX Measures Examples
