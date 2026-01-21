@@ -5,21 +5,23 @@ Data analysis project exploring a travel insurance company’s sales, agency and
 
 The repository is organized to separate different stages of the project for clarity:
 
-README.md # Project purpose, tools, methodology, insights, and limitations
-/SQL/
-01_data_cleaning.sql # Cleaning and standardization of raw data
-02_create_tables.sql # Creation of normalized tables and relationships
-03_insert_data.sql # Insert cleaned data into normalized tables
-04_sanity_checks.sql # Verify data integrity and relationships
-/PowerBI/
-Travel_insurance_sales.pbix # Final Power BI dashboard file
-/screenshots/ # Screenshots of each dashboard page
-01_overview.png
-02_agency_performance.png
-03_product_insights.png
-04_conclusions.png
-05_strategic_recommendations.png
+- **README.md** – Project purpose, tools, methodology, insights, and limitations
 
+- **/SQL/**  
+  - `01_data_cleaning.sql` – Cleaning and standardization of raw data  
+  - `02_create_tables.sql` – Creation of normalized tables and relationships  
+  - `03_insert_data.sql` – Insert cleaned data into normalized tables  
+  - `04_sanity_checks.sql` – Verify data integrity and relationships
+
+- **/PowerBI/**  
+  - `Travel_Insurance_Sales.pbix` – Final Power BI dashboard file  
+  - **/screenshots/** – Screenshots of each dashboard page  
+    - `01_overview.png`  
+    - `02_agency_performance.png`  
+    - `03_product_insights.png`  
+    - `04_conclusions.png`  
+    - `05_strategic_recommendations.png`
+      
 ## 📎 Project Purpose 
 
 This project was developed as part of a Data Analyst / Business Intelligence portfolio to demonstrate:
