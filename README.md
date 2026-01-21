@@ -48,20 +48,17 @@ The dataset was sourced from a publicly available dataset on Kaggle and represen
 ▪️Claim status (Yes / No) 
 
 ## 🧹 Data Cleaning & Modeling (MySQL) 
-
 The raw CSV dataset was fully processed in MySQL, including:
 
-▪️Data cleaning and standardization
+1️⃣ Data cleaning and standardization (e.g., trimming spaces, converting data types)
 
-▪️Handling missing and inconsistent values
+2️⃣ Creation of normalized tables and relational model with primary and foreign keys
 
-▪️Creation of primary and foreign keys
+3️⃣ Normalization into relational tables (agencies, products, sales)
 
-▪️Normalization into relational tables
+4️⃣ Sanity checks to ensure data integrity before analysis
 
-▪️Definition of relationships to enable analytical queries
-
-Final Data Model:
+Final Data Model
 
 The cleaned and structured database consists of:
 
@@ -71,70 +68,46 @@ The cleaned and structured database consists of:
 
 ▪️sales: sale_id, agency_id, product_id, claim_status, destination, duration, net_sales, commission
 
-This relational model enables efficient analysis of sales, claims, commissions, and performance across agencies and products.
-
 ## 📈 Power BI Dashboard Structure 
 
-The Power BI report is structured into the following sections:
+📊 KPI Measures & Power BI Dashboard
 
-1️⃣ Overview
+All key performance indicators (KPIs) were implemented directly in Power BI using DAX measures, leveraging the cleaned and normalized MySQL database.
 
-Total Net Sales (≈ SGD 3M)
+### Dashboard Structure
 
-Total Policies Sold (63K)
+  1️⃣ Overview: Total net sales and number of policies, Overall claim rate, High-level assessment of overall business performance.
+  
+  2️⃣ Agency Performance: Total sales, net revenue, claim risk, and commission rates by agency, Highlights top-performing and high-risk agencies.
+  
+  3️⃣ Product Insights: Sales and net revenue per product, Claim risk by product, Identification of most profitable and risk-heavy products.
+  
+  4️⃣ Conclusions & Recommendations: Summary of principal KPIs, Top and lowest performing segments (agencies and products), Strategic recommendations for business improvements.
 
-Claim Rate (≈ 1.5%)
+### Key DAX Measures Examples
 
-High-level assessment of overall business performance
+ ▪️ Total Sales: COUNT(sales[sale_id])
+  
+ ▪️ Net Revenue: SUM(sales[net_sales])
+  
+ ▪️ Claim Rate: DIVIDE([Total Claims], [Total Sales])
+  
+ ▪️ Average Net Sales per Claim: AVERAGEX(FILTER(sales, sales[claim_status] = "Yes"), sales[net_sales])
+  
+ ▪️ Top Performing Agencies and Products
+  
+  These measures enable dynamic, interactive dashboards, allowing drill-downs by agency or product and instant visual comparisons across key metrics.
 
-2️⃣ Agency Performance
-
-Sales volume and net revenue by agency
-
-Claim rate comparison across agencies
-
-Commission rate analysis
-
-Identification of high-performing and high-risk agencies
-
-3️⃣ Product Insights
-
-Sales volume vs net revenue by product
-
-Claim rate by product
-
-Identification of profitable and high-risk insurance products
-
-4️⃣ Conclusions & Recommendations
-
-Key business KPIs
-
-Top-performing segments
-
-Lowest-performing and highest-risk segments
-
-Strategic recommendations to improve profitability and risk control
+⚡ Note: All final KPIs and interactive insights were implemented in Power BI using DAX measures. SQL queries (sanity_checks.sql) were used solely for data integrity verification and basic aggregation checks.
 
 ## 🔍 Key Insights 
+- **High-performing agencies**: EPX drives 45% of total net revenue with low claim rate.
 
-EPX is the top-performing agency, contributing ~45% of total net revenue and ~55% of total sales.
+- **High-risk agencies**: C2B shows the highest claim rate; LWC has high commission rates.
 
-Overall claim volume remains low (~1.5%), indicating a healthy risk profile in the first year.
+- **High-performing products**: 2 Way Comprehensive Plan and Cancellation Plan generate the most revenue with minimal claims.
 
-C2B combines high revenue with the highest claim rate, increasing operational risk.
-
-CWT shows a very high commission rate (~75%), negatively impacting margins.
-
-Products such as Annual Silver and Annual Gold Plans present elevated claim rates, while Cancellation Plan and 2 Way Comprehensive Plan show strong profitability with low risk.
-
-## 🎯 Business Recommendations 
-
-Strengthen focus on high-performing segments with strong revenue and low claim ratios.
-
-Optimize high-risk agency relationships through stricter underwriting and commission renegotiation.
-
-Improve product risk management by reassessing pricing, coverage, or segmentation for annual plans with high claim rates.
-
+- **Risk-heavy products**: Annual Plans have high claim rates.
 
 ## ⚠️ Data Limitations & Assumptions 
 
@@ -145,10 +118,3 @@ Improve product risk management by reassessing pricing, coverage, or segmentatio
 - The dataset only includes **net sales and commission amounts**, without detailed information on operational costs, claim payouts, or margins.
 
 - The **claim status variable is binary (Yes/No)** and does not include the monetary cost of claims. As a result, the analysis focuses on **claim frequency rather than claim severity**, and direct financial impact of claims could not be quantified.
-
-
-
-
-
-
-
