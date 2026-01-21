@@ -36,7 +36,7 @@ This project was developed as part of a Data Analyst / Business Intelligence por
 
 ▪️Actionable insights to support data-driven decision-making.
 
-## 🛠️ Tools & Technologies
+## 🛠️ Tools
 
 MySQL – Data cleaning, transformation, normalization, and relational modeling.
 
