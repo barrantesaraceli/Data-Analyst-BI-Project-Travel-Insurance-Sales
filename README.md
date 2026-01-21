@@ -79,17 +79,16 @@ All key performance indicators (KPIs) were implemented directly in Power BI usin
 ### Dashboard Structure
 
   1️⃣ Overview: Total net sales and number of policies, Overall claim rate, High-level assessment of overall business performance.
-  ![Overview](PowerBI/screenshots/01_overview.png)
+  ![Overview](PowerBI/PowerBI/screenshots/01_overview.png)
   
   2️⃣ Agencies Performance: Total sales, net revenue, claim risk, and commission rates by agency, Highlights top-performing and high-risk agencies.
-  ![Agency Performance](PowerBI/screenshots/02_agency_performance.png)
+  ![Agency Performance](PowerBI/PowerBI/screenshots/02_agency_performance.png)
   
   3️⃣ Products Insights: Sales and net revenue per product, Claim risk by product, Identification of most profitable and risk-heavy products.
-  ![Product Insights](PowerBI/screenshots/03_product_insights.png)
+  ![Product Insights](PowerBI/PowerBI/screenshots/03_product_insights.png)
   
   4️⃣ Conclusions & Recommendations: Summary of principal KPIs, Top and lowest performing segments (agencies and products), Strategic recommendations for business improvements.
-  ![Conclusions](PowerBI/screenshots/04_conclusions.png)  
-  ![Strategic Recommendations](PowerBI/screenshots/05_strategic_recommendations.png)
+  ![Conclusions](PowerBI/PowerBI/screenshots/04_conclusions.png) ![Strategic Recommendations](PowerBI/PowerBI/screenshots/05_strategic_recommendations.png)
   
 ### Key DAX Measures Examples
 
