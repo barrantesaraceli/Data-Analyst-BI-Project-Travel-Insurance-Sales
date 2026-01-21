@@ -72,6 +72,8 @@ The cleaned and structured database consists of:
 
 📊 KPI Measures & Power BI Dashboard
 
+📥 [Download Power BI Dashboard (.pbix)](PowerBI/Travel_insurance_sales.pbix)
+
 All key performance indicators (KPIs) were implemented directly in Power BI using DAX measures, leveraging the cleaned and normalized MySQL database.
 
 ### Dashboard Structure
