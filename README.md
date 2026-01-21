@@ -10,8 +10,8 @@ The repository is organized to separate different stages of the project for clar
 - **/SQL/**  
   - `01_data_cleaning.sql` – Cleaning and standardization of raw data  
   - `02_create_tables.sql` – Creation of normalized tables and relationships  
-  - `03_insert_data.sql` – Insert cleaned data into normalized tables  
-  - `04_sanity_checks.sql` – Verify data integrity and relationships
+  - `03_insert_cleaned_data.sql` – Insert cleaned data into normalized tables  
+  - `04_sanity_check.sql` – Verify data integrity and relationships
 
 - **/PowerBI/**  
   - `Travel_Insurance_Sales.pbix` – Final Power BI dashboard file  
@@ -96,8 +96,8 @@ All SQL scripts used for data cleaning, table creation, normalization, and sanit
 
 - [01_data_cleaning.sql](SQL/01_data_cleaning.sql) – Cleaning and standardizing raw CSV data  
 - [02_create_tables.sql](SQL/02_create_tables.sql) – Creating normalized tables and relational model  
-- [03_insert_data.sql](SQL/03_insert_data_cleaned.sql) – Inserting cleaned data into normalized tables  
-- [04_sanity_checks.sql](SQL/04_sanity_checks.sql) – Verifying data integrity and relationships
+- [03_insert_cleaned_data.sql](SQL/03_insert_cleaned_data.sql) – Inserting cleaned data into normalized tables  
+- [04_sanity_check.sql](SQL/04_sanity_check.sql) – Verifying data integrity and relationships
 
 ## 📈 Power BI Dashboard Structure 
 
