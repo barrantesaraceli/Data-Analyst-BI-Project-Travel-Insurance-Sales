@@ -72,7 +72,7 @@ The dataset was sourced from a publicly available dataset on Kaggle and represen
 
 The raw CSV dataset was fully processed in MySQL, including:
 
-1️⃣ Data cleaning and standardization (e.g., trimming spaces, converting data types)
+1️⃣ Data cleaning and standardization (e.g. trimming spaces, converting data types)
 
 2️⃣ Creation of normalized tables and relational model with primary and foreign keys
 
@@ -127,16 +127,27 @@ All key performance indicators (KPIs) were implemented directly in Power BI usin
   
 ### Key DAX Measures Examples
 
- ▪️ Total Sales: COUNT(sales[sale_id])
-  
- ▪️ Net Revenue: SUM(sales[net_sales])
-  
- ▪️ Claim Rate: DIVIDE([Total Claims], [Total Sales])
-  
- ▪️ Average Net Sales per Claim: AVERAGEX(FILTER(sales, sales[claim_status] = "Yes"), sales[net_sales])
-  
- ▪️ Top Performing Agencies and Products
-  
+ ▪️Total Claims = 
+    CALCULATE(
+        [Volume of Policies Sold],
+        sales[Claim Status] = "Yes"
+    )
+    
+ ▪️ Claim Rate = DIVIDE([Total Claims], [Volume of Policies Sold], 0)  
+ 
+ ▪️ Top Agency by Number of Sales = 
+    VAR SalesByAgency =
+        ADDCOLUMNS(
+            VALUES(agencies[Agency]),
+            "NetSalesSum", CALCULATE(SUM(sales[net_sales]))
+        )
+    RETURN
+        CONCATENATEX(
+            TOPN(1, SalesByAgency, [NetSalesSum], DESC),
+            agencies[Agency],
+            ", "
+        )
+        
   These measures enable dynamic, interactive dashboards, allowing drill-downs by agency or product and instant visual comparisons across key metrics.
 
 ⚡ Note: All final KPIs and interactive insights were implemented in Power BI using DAX measures. SQL queries (sanity_checks.sql) were used solely for data integrity verification and basic aggregation checks.
@@ -154,7 +165,7 @@ All key performance indicators (KPIs) were implemented directly in Power BI usin
 
 - The analysis refers to the **first year of operations**, as no historical data was available for comparison. This assumption allows for benchmarking performance, but year-over-year trends cannot be assessed.
   
-- No temporal breakdown (monthly or quarterly) is available; therefore, the analysis is performed on the dataset as a whole. If time-series data were available, it would be valuable to analyze trends, seasonality, and potential patterns across months.
+- No temporal breakdown (monthly or quarterly) is available; therefore, **the analysis is performed on the dataset as a whole**. If time-series data were available, it would be valuable to analyze trends, seasonality, and potential patterns across months.
 
 - The dataset only includes **net sales and commission amounts**, without detailed information on operational costs, claim payouts, or margins.
 
