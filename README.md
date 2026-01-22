@@ -103,7 +103,7 @@ All SQL scripts used for data cleaning, table creation, normalization, and sanit
 
 📊 KPI Measures & Power BI Dashboard
 
-📥 [Download Power BI Dashboard (.pbix)](PowerBI/Travel_insurance_sales.pbix)
+📥 [Download Power BI Dashboard (.pbix)](PowerBI/dashboard_travel_insurance_sales.pbix)
 
 All key performance indicators (KPIs) were implemented directly in Power BI using DAX measures, leveraging the cleaned and normalized MySQL database.
 
