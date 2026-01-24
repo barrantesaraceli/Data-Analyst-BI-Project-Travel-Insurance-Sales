@@ -8,14 +8,14 @@ The repository is organized to separate different stages of the project for clar
 - **README.md** – Project purpose, tools, methodology, insights, and limitations
 
 - **SQL Script**
-  [Data Preparing and Modelation](sql/)
+  [Data Preparing and Modelation](SQL/)
   - `01_data_cleaning.sql` – Cleaning and standardization of raw data  
   - `02_create_tables.sql` – Creation of normalized tables and relationships  
   - `03_insert_cleaned_data.sql` – Insert cleaned data into normalized tables  
   - `04_sanity_check.sql` – Verify data integrity and relationships
  
 - **Power BI**
-  [Dashboard](powerbi/dashboard_travel_insurance.pbix) 
+  [Dashboard](PowerBI/dashboard_travel_insurance_sales.pbix) 
   - **/screenshots/** – Screenshots of each dashboard page  
     - `01_overview.png`  
     - `02_agency_performance.png`  
